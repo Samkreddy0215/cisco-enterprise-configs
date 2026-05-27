@@ -1,0 +1,18 @@
+enable
+configure terminal
+
+vlan 10
+ name USERS
+
+vlan 20
+ name SERVERS
+
+interface range g0/1 - 2
+ switchport mode access
+ switchport access vlan 10
+
+interface g0/24
+ switchport mode trunk
+
+end
+write memory
